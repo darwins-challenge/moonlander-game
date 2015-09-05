@@ -62,9 +62,13 @@
 
 
     var simulation = new lander.simulation.Simulation(world, moonLander, {
-        gravity: new lander.vector.Vector(0, -0.05),
-        landerRadius: 10
+        gravity: new lander.vector.Vector(0, -0.01),
+        landerRadius: 10,
+        thrusterAcceleration: 0.05,
+        turningSpeed: Math.PI/1000,
+        landingMaxSpeed: 0.25
     });
+
 
     var updateInfo = (function(){
         var x = document.getElementById('x');
