@@ -72,6 +72,8 @@
         var vy = document.getElementById('vy');
         var orientation = document.getElementById('orientation');
         var angularVelocity = document.getElementById('angularVelocity');
+        var gravity = document.getElementById('gravity');
+        var thrust = document.getElementById('thrust');
         return function(){
             x.innerHTML = moonLander.x.x.toFixed(2);
             y.innerHTML = moonLander.x.y.toFixed(2);
@@ -79,6 +81,8 @@
             vy.innerHTML = moonLander.v.y.toFixed(2);
             orientation.innerHTML = (moonLander.o.angle() - Math.PI/2).toFixed(2);
             angularVelocity.innerHTML = moonLander.w.toFixed(2);
+            gravity.innerHTML = simulation.params.gravity.y.toFixed(2);
+            thrust.innerHTML = simulation.params.thrusterAcceleration.toFixed(2);
         };
     })();
 
