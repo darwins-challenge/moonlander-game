@@ -1,7 +1,8 @@
 label:after {
-  content: ":";
+  content: ": ";
 }
 
-span:after {
-  content: ",";
+span {
+    display: inline-block;
+    width: 3em;
 }
