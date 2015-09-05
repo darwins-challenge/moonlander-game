@@ -3,10 +3,19 @@
   <head>
     <meta charset="utf-8"/>
     <title>Moon Lander Game</title>
+    <link rel="stylesheet" href="css/lander.css"/>
   </head>
   <body>
     <h1>Moon Lander Game</h1>
-    <canvas id="display" width="640" height="480"/>
+    <canvas id="display" width="640" height="480"></canvas>
+    <div>
+      <label for="x">x</label><span id="x">?</span>
+      <label for="y">y</label><span id="y">?</span>
+      <label for="vx">vx</label><span id="vx">?</span>
+      <label for="vy">vy</label><span id="vy">?</span>
+      <label for="orientation">o</label><span id="orientation">?</span>
+      <label for="angularVelocity">w</label><span id="angularVelocity">?</span>
+    </div>
     <script src="bower_components/moonlander-visualisation/lander.js"></script>
     <script src="bower_components/moonlander-simulation/dist/simulation-browser.js"></script>
     <script src="js/application.js"></script>

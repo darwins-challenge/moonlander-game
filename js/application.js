@@ -65,11 +65,28 @@
         landerRadius: 10
     });
 
+    var updateInfo = (function(){
+        var x = document.getElementById('x');
+        var y = document.getElementById('y');
+        var vx = document.getElementById('vx');
+        var vy = document.getElementById('vy');
+        var orientation = document.getElementById('orientation');
+        var angularVelocity = document.getElementById('angularVelocity');
+        return function(){
+            x.innerHTML = moonLander.x.x.toFixed(2);
+            y.innerHTML = moonLander.x.y.toFixed(2);
+            vx.innerHTML = moonLander.v.x.toFixed(2);
+            vy.innerHTML = moonLander.v.y.toFixed(2);
+            orientation.innerHTML = (moonLander.o.angle() - Math.PI/2).toFixed(2);
+            angularVelocity.innerHTML = moonLander.w.toFixed(2);
+        };
+    })();
 
     var view = new lander.View(model, display);
     function tick(){
         simulation.tick();
-        updateModel()
+        updateModel();
+        updateInfo();
         view.update();
         requestAnimationFrame(tick);
     };
