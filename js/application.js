@@ -55,6 +55,7 @@
         model.lander.orientation = moonLander.o.angle() - Math.PI/2;
         model.lander.radius = simulation.params.landerRadius;
         model.lander.crashed = moonLander.crashed;
+        model.lander.landed = moonLander.landed;
         model.lander.fuel = moonLander.fuel;
         model.lander.thrusting = moonLander.thrusting;
     }
