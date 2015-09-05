@@ -1,0 +1,27 @@
+{
+  "name": "moonlander-game",
+  "version": "0.0.0",
+  "homepage": "https://github.com/darwins-challenge/moonlander-game",
+  "authors": [
+    "dvberkel <daan.v.berkel.1980@gmail.com>"
+  ],
+  "description": "A playground to test the physics and visualisation of the moonlander environment",
+  "main": "index.html",
+  "keywords": [
+    "moon",
+    "lander",
+    "game"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "moonlander-visualisation": "~1.0.0"
+  }
+}
