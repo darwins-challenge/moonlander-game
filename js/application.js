@@ -61,7 +61,8 @@
 
 
     var simulation = new lander.simulation.Simulation(world, moonLander, {
-        gravity: new lander.vector.Vector(0, -0.05)
+        gravity: new lander.vector.Vector(0, -0.05),
+        landerRadius: 10
     });
 
 
