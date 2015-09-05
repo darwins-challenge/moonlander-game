@@ -28,7 +28,9 @@
         model.lander.crashed = moonLander.crashed;
     }
 
-    var simulation = new lander.simulation.Simulation(world, moonLander);
+    var simulation = new lander.simulation.Simulation(world, moonLander, {
+        gravity: new lander.vector.Vector(0, -0.05)
+    });
 
 
     var view = new lander.View(model, display);
