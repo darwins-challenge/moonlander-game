@@ -22,6 +22,7 @@
     "tests"
   ],
   "dependencies": {
-    "moonlander-visualisation": "~1.0.0"
+    "moonlander-visualisation": "~1.0.0",
+    "moonlander-simulation": "*"
   }
 }
