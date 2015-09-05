@@ -11,7 +11,8 @@
         "lander": {
             "x": 37, "y": 251,
             "orientation": Math.PI/4,
-            "radius": 5
+            "radius": 5,
+            "fuel": 10
         },
         "horizon": horizon
     };
@@ -53,6 +54,7 @@
         model.lander.orientation = moonLander.o.angle() - Math.PI/2;
         model.lander.radius = simulation.params.landerRadius;
         model.lander.crashed = moonLander.crashed;
+        model.lander.fuel = moonLander.fuel;
     }
 
 
