@@ -25,6 +25,7 @@
         model.lander.y = moonLander.x.y;
         model.lander.orientation = moonLander.o.angle() - Math.PI/2;
         model.lander.radius = simulation.params.landerRadius;
+        model.lander.crashed = moonLander.crashed;
     }
 
     var simulation = new lander.simulation.Simulation(world, moonLander);
