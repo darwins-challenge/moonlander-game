@@ -45,9 +45,34 @@
         }
     }
 
+    var simulationOptions = {
+        gravity: new lander.vector.Vector(0, -0.01),
+        landerRadius: 10,
+        thrusterAcceleration: 0.05,
+        turningSpeed: Math.PI/1000,
+        landingMaxSpeed: 0.25
+    };
+    var robotControl = (function(){
+        var a = simulationOptions.thrusterAcceleration + simulationOptions.gravity.y
+        var shouldThrust = false;
+        return function robotControl(commandpanel){
+            var x = commandpanel.see.x();
+            var h = x.y - horizon_height;
+            var v = commandpanel.see.v();
+            var s = v.y;
+            shouldThrust = shouldThrust || (Math.pow(s,2) >=  13/8 * a * h);
+            if (shouldThrust) {
+                console.log('thrusting');
+                commandpanel.do.thruster();
+            } else {
+                console.log("skipping");
+            }
+        }
+    })();
+
     var world = new lander.simulation.FlatLand(display.width, horizon_height);
     var position = new lander.vector.Vector(37, 251);
-    var moonLander = new lander.simulation.Lander(position, control);
+    var moonLander = new lander.simulation.Lander(position, robotControl);
 
     function updateModel() {
         model.lander.x = moonLander.x.x;
@@ -61,13 +86,7 @@
     }
 
 
-    var simulation = new lander.simulation.Simulation(world, moonLander, {
-        gravity: new lander.vector.Vector(0, -0.01),
-        landerRadius: 10,
-        thrusterAcceleration: 0.05,
-        turningSpeed: Math.PI/1000,
-        landingMaxSpeed: 0.25
-    });
+    var simulation = new lander.simulation.Simulation(world, moonLander, simulationOptions);
 
 
     var updateInfo = (function(){
