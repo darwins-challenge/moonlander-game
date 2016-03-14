@@ -19,7 +19,7 @@
     };
 
     var pressed = {
-    }
+    };
     document.body.addEventListener('keydown', function(event){
         var code = event.keyCode;
         pressed[code] = true;
@@ -53,7 +53,7 @@
         landingMaxSpeed: 0.25
     };
     var robotControl = (function(){
-        var a = simulationOptions.thrusterAcceleration + simulationOptions.gravity.y
+        var a = simulationOptions.thrusterAcceleration + simulationOptions.gravity.y;
         var shouldThrust = false;
         return function robotControl(commandpanel){
             var x = commandpanel.see.x();
@@ -67,12 +67,12 @@
             } else {
                 console.log("skipping");
             }
-        }
+        };
     })();
 
     var world = new lander.simulation.FlatLand(display.width, horizon_height);
     var position = new lander.vector.Vector(37, 251);
-    var moonLander = new lander.simulation.Lander(position, robotControl);
+    var moonLander = new lander.simulation.Lander(position, control);
 
     function updateModel() {
         model.lander.x = moonLander.x.x;
