@@ -3,7 +3,7 @@
 
     var model = {
         "lander": {
-            "x": display.width/2, "y": 251,
+            "x": 0, "y": 251,
             "orientation": Math.PI/4,
             "radius": 5,
             "fuel": 10,
@@ -46,7 +46,7 @@
         landingMaxSpeed: 0.25
     };
     var world = new lander.simulation.FlatLand(display.width, 0);
-    var position = new lander.vector.Vector(display.width/2, 251);
+    var position = new lander.vector.Vector(0, 251);
     var moonLander = new lander.simulation.Lander(position, control);
 
     function updateModel() {
