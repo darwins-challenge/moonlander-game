@@ -3,23 +3,69 @@
   <head>
     <meta charset="utf-8"/>
     <title>Moon Lander Game</title>
-    <link rel="stylesheet" href="css/lander.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="bower_components/moonlander-visualisation/static/styles.css">
   </head>
   <body>
-    <h1>Moon Lander Game</h1>
-    <canvas id="display" width="640" height="480"></canvas>
-    <div>
-      <label for="x">x</label><span id="x">?</span>
-      <label for="y">y</label><span id="y">?</span>
-      <label for="vx">vx</label><span id="vx">?</span>
-      <label for="vy">vy</label><span id="vy">?</span>
-      <label for="orientation">o</label><span id="orientation">?</span>
-      <label for="angularVelocity">w</label><span id="angularVelocity">?</span>
-      <label for="gravity">g</label><span id="gravity">?</span>
-      <label for="thrust">F</label><span id="thrust">?</span>
+     <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Moon Lander Game</a>
+      </div>
+      </div>
+     </nav>
+     <div class="container">
+      <div class="row">
+        <div class="col-xs-3">
+          <h2>Evolutions</h2>
+          <button type="button" class="btn btn-success" id="start-btn">Start evolution</button>
+          <button type="button" class="btn btn-danger" id="stop-btn">Stop</button>
+          <br><br>
+
+          <div id="generation-list" class="list-group left-pane"></div>
+          <!--
+          <div id="file-list" class="list-group"></div>
+          <div class="pull-right">
+            <button id="refresh-btn" class="btn btn-default"><span class="glyphicon glyphicon-refresh"></span></button>
+          </div>
+          -->
+        </div>
+        <div class="col-xs-8">
+          <h2>Display</h2>
+          <canvas id="display" width="640" height="480" style="background: url(bower_components/moonlander-visualisation/static/images/background.jpg);"></canvas>
+
+          <div class="row">
+            <div class="col-xs-4">
+              <h2>Score</h2>
+              <table class="table table-condensed">
+                <tbody id="score-table">
+                </tbody>
+              </table>
+            </div>
+            <div class="col-xs-5">
+              <h2>Program</h2>
+              <div id="program-pane"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <script src="bower_components/moonlander-visualisation/lander.js"></script>
+
+    <div style="display: none;">
+      <img id="lander0" src="bower_components/moonlander-visualisation/static/images/lander0.png">
+      <img id="lander1" src="bower_components/moonlander-visualisation/static/images/lander1.png">
+      <img id="lander2" src="bower_components/moonlander-visualisation/static/images/lander2.png">
+      <img id="landerg" src="bower_components/moonlander-visualisation/static/images/landerg.png">
+      <img id="landerr" src="bower_components/moonlander-visualisation/static/images/landerr.png">
+    </div>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/moonlander-simulation/dist/simulation-browser.js"></script>
+    <script src="bower_components/moonlander-visualisation/static/js/lander.js"></script>
+    <script src="bower_components/moonlander-visualisation/static/js/program.js"></script>
     <script src="js/application.js"></script>
   </body>
 </html>
