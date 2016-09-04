@@ -45,7 +45,7 @@
         turningSpeed: Math.PI/1000,
         landingMaxSpeed: 0.25
     };
-    var world = new lander.simulation.FlatLand(display.width, 0);
+    var world = new lander.simulation.FlatLand(display.width, -10);
     var position = new lander.vector.Vector(0, 251);
     var moonLander = new lander.simulation.Lander(position, control);
 
