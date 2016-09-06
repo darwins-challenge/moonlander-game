@@ -53,6 +53,7 @@
     var world = new lander.simulation.FlatLand(display.width, -10);
     var position = new lander.vector.Vector(0, 251);
     var moonLander = new lander.simulation.Lander(position, control);
+    moonLander.w = rotationCheckbox.checked? Math.PI/100 : 0;
 
     function updateModel() {
         model.lander.x = moonLander.x.x;
