@@ -1,5 +1,10 @@
 ;(function(lander, undefined){
     var display = document.getElementById('display');
+    var rotationCheckbox = document.getElementById('rotation');
+    rotationCheckbox.addEventListener('change', function(){
+        storage.set('rotation', rotationCheckbox.checked);
+    });
+    rotationCheckbox.checked = 'true' === storage.getOrDefault('rotation', 'false');
 
     var model = {
         "lander": {
