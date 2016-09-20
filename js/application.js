@@ -64,6 +64,10 @@
         model.lander.landed = moonLander.landed;
         model.lander.fuel = moonLander.fuel;
         model.lander.thrusting = moonLander.thrusting;
+        if (moonLander.crashed) {
+            model.lander.hit_ground = true;
+            model.lander.crash_speed = true;
+        }
     }
 
 
