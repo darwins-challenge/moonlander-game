@@ -48,7 +48,8 @@
         landerRadius: 10,
         thrusterAcceleration: 0.05,
         turningSpeed: Math.PI/1000,
-        landingMaxSpeed: 0.25
+        landingMaxSpeed: 0.25,
+        landingOrientationEpsilon: Math.PI / 8
     };
     var world = new lander.simulation.FlatLand(display.width, -10);
     var position = new lander.vector.Vector(0, 251);
